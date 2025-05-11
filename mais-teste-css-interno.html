@@ -5,16 +5,33 @@
         <meta name="viewport" content="width=device=widht">
         <title>Estilizando uma página HTML</title>
         <style>
-            #text-container{
-                color:red;
-                font-size: 18px;
+            @font-face {
+                font-family:"Tagesschrift";
+                src: url("Tagesschrift-Regular.woff2");
                 font-weight: bold;
+                font-style: normal;
+            }
+            @font-face {
+                font-family: "Fira Sans";
+                src: url(FiraSans-BlackItalic.woff2);
+                font-weight: bold;
+                font-style: normal;
+            }
+            #text-container{
+                font-family: Tagesschrift;
+            }
+            #text-container2{
+                font-family: "Fira Sans";
             }
         </style>
     </head>
     <body>
         <div class="container">
+            <h1>Fonte Tagesschrift</h1>
             <p id="text-container">Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse, sunt amet voluptatibus perspiciatis, impedit quia doloribus iste autem, natus cupiditate placeat nihil! Rem aliquam culpa minima aspernatur. Accusamus assumenda aperiam perferendis nostrum, pariatur sint iure illo! Dolorem perferendis alias quas possimus veniam dicta quis repudiandae distinctio inventore, ad maiores ullam est vero dignissimos. Cum eos, nemo dolorum possimus beatae ea placeat molestiae debitis nostrum pariatur vitae iste adipisci nihil inventore tempore, amet quisquam odit hic dolores provident? Eius, soluta incidunt.
+            </p>
+            <h1>Fonte Fira Sans</h1>
+            <p id="text-container2">Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore excepturi praesentium error ea tempora beatae nisi aut similique tenetur natus! Dolor blanditiis saepe id corrupti laborum sit debitis tempore ut? Praesentium, tempore. Odit nisi hic commodi facere. Dolores, maxime ea! Suscipit sapiente, odio voluptatibus obcaecati officiis itaque quas iste dolorum adipisci voluptas nisi temporibus, maxime eveniet repellendus consectetur eligendi distinctio, eos soluta! Inventore, non architecto. Esse adipisci fugiat impedit aliquid eligendi recusandae doloremque neque. Dolor minus voluptates totam expedita eius.
             </p>
         </div>
     </body>
