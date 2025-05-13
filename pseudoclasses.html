@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+    <head>
+        <!--LISTA BÁSICA DE PSEUDOCLASSES
+        
+        a:active - SELECIONAR TODOS OS LINKS ATIVOS
+        input:checked - SELECIONAR TODOS OS CAMPOS INPUT CHECADOS
+        li:first-child - SELECIONAR TODO PRIMEIRO ITEM DE LISTA 
+        li:last-child - SELECIONAR TODO ÚLTIMO ITEM DE LISTA 
+        div:hover - SELECIONAR TODAS AS DIVS NO EVENTO MOUSEOVER
+        -->
+
+
+
+        <!--LISTA BASICA DE PSEUDOELEMENTOS
+        Pseudoelementos visam facilitar a compreensão do código ao diminuir o tanto que precisamos escrever para atingir um determinado efeito. 
+
+        img::after - INSERIR CONTEÚDO APÓS O ELEMENTO INDICADO
+        h1::before - INSERIR CONTEÚDO ANTES DO ELEMENTO INDICADO
+        p::first-letter - SELECIONAR A PRIMEIRA LETRA DO ELEMENTO INDICADO
+        p::first-line - SELECIONAR A PRIMEIRA LINHA DO ELEMENTO INDICADO
+        P::SELECTION - SELECIONAR A PORÇÃO DE UM ELEMENTO QUE É SELECIONADO PELO USUÁRIO
+        -->
+        <meta charset="UTF-8">
+        <title>Posicionamento de Elementos com CSS</title>
+        <style type="text/css">
+            div#main{
+                margin: auto;
+                width: 650px;
+                background-color: orange;
+                border: 1px solid #000;
+                padding: 10px;
+                height: auto;
+            }
+            .img{
+                width: 400px;
+                height: 200px;
+                border: 3px inset blue;
+                
+            }
+            #container-texto{
+                width: 600px;
+                background-color: blue;
+                height: 150px;
+                overflow: auto;
+                margin-top: 20px;
+                padding-left: 5px;
+                padding-right: 5px;
+                border: 4px dashed grey;
+            }
+            .texto{
+                font-weight: bold;
+                text-decoration: underline;
+                color: aliceblue;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="main">
+            <h1>Visão Final da Página</h1>
+            <img class="img" src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7a/Boxmodell-detail.png/220px-Boxmodell-detail.png">
+            <div id="container-texto">
+                <p>
+                    <span class="texto">
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Molestiae facilis sit quo earum, sequi aliquid explicabo soluta magnam officiis adipisci?
+                    </span>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus, molestias similique quas quibusdam dolorem eligendi cumque praesentium ea consequuntur rem eius sint accusantium totam ipsum harum provident repellat officiis voluptatibus?
+                </p>
+                <p>
+                    <span class="texto">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae.
+                    </span>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex, facere necessitatibus nisi voluptatum magnam et neque repudiandae suscipit. Tempore quam delectus, aut blanditiis odit placeat recusandae eos fuga. Sunt, adipisci.
+                </p>
+            </div>
+        </div>
+    </body>
+</html>
+
