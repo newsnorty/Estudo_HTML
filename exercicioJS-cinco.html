@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+    <head>
+        <meta charset="utf-8">
+        <title>Consumo de JSON local</title>
+    </head>
+    <body>
+        <button onclick="loadLocalJSON()">Carregar JSON</button>
+    </body>
+    <script type="text/javascript">
+        function loadLocalJSON(){
+            fetch('dados.json', {
+                method: 'get'
+            })
+            .then(function(response){
+                response.json().then(function(data){
+                    console.log("Dados do JSON local: " + JSON.stringify(data));
+                });
+            })
+            .catch(function(err){
+                console.error('O seguinte erro ocorreu durante a requisição: ' + err);
+            });
+        }
+    </script>
+</html>

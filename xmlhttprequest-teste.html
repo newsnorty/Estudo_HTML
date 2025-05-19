@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+    <head>
+        <meta charset="utf-8">
+        <title>Requisição XMLHttpRequest</title>
+    </head>
+    <body>
+        <h1>Imagens Aleatórias de Cachorros</h1>
+        <p>A partir do click no botão abaixo, uma nova imagem aleatória de cachorros será carregada utilizando requisições assíncronas com XMLHttpRequest</p>
+
+        <img id="img_dog" src="" alt="Aguardando a imagem ser carregada"/>
+        <br/>
+        <button onclick="carregarImagens()">Carregar Imagens</button>
+    </body>
+    <script type="text/javascript">
+        function carregarImagens(){
+
+            var xmlHttpRequest = new XMLHttpRequest();
+            var url = "https://dog.ceo/api/breeds/image/random"
+
+            xmlHttpRequest.open("GET", url, true); //Metodo OPEN recebe 3 parametros sendo, respectivamente, requisicao dos dados, url remota do servidor que queremos acessar e o tipo de requisicao (true) que define uma requisicao assincrona e (false) define uma sincrona. O valor padrao eh true, sendo opcional colocar neste caso se o objetivo for requisicao assincrona.
+
+            //Monitora o status da requisicao
+            xmlHttpRequest.onreadystatechange = function(){
+                //Especifica a funcao a ser executada a cada mudanca
+                if(xmlHttpRequest.readyState == 3){
+                    //Requisicao sendo processada e mensagem a ser exibida enquanto esta processando, dependendo do tempo de resposta do servidor remoto, nem sempre vai ser possivel ver
+                    console.log('Carregando o conteudo');
+                }
+                if(xmlHttpRequest.readyState == 4){
+                    var jsonResponse = JSON.parse(xmlHttpRequest.responseText);
+                    console.log("Requisicao Finalizada");
+                    console.log("Resultado da requisicao: " + jsonResponse);
+                    console.log("Resultado da requisicao: " + jsonResponse.message);
+
+                    var imgDog = document.getElementById("img_dog");
+                    imgDog.src = jsonResponse.message;
+                }
+            };
+
+            xmlHttpRequest.send(null);
+
+        }
+    </script>
+</html>

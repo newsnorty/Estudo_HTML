@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="utf-8">
+    <title>Requisição a Recurso JSON</title>
+</head>
+<body>
+    <h1>API de Dados Falsos</h1>
+    <button onclick="carregarDados()">Carregar Json</button>
+
+    <script type="text/javascript">
+        function carregarDados() {
+            const url = "https://dummyjson.com/products/1";
+            fetch(url, {
+                method: 'get'
+            })
+            .then(function(response) {
+                return response.json(); // Corrigido: adicionar return
+            })
+            .then(function(data) {
+                console.log("Product Id: " + data.id);
+                console.log("Product Title: " + data.title);
+                console.log("Product Description: " + data.description);
+                console.log("Product Price: " + data.price);
+                console.log("Product Discount Percentage: " + data.discountPercentage);
+                console.log("Product Rating: " + data.rating);
+                console.log("Product Stock: " + data.stock);
+                console.log("Product Brand: " + data.brand);
+                console.log("Product Category: " + data.category);
+                console.log("Product Thumbnail: " + data.thumbnail);
+                console.log("Product Images: " + data.images);
+            })
+            .catch(function(err) {
+                console.error("Erro na requisição: " + err);
+            });
+        }
+    </script>
+</body>
+</html>

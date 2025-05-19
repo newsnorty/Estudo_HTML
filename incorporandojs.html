@@ -5,43 +5,43 @@
         <title>Incorporando Javascript em Páginas HTML</title>
         <!--Incorporando um arquivo .js externo-->
         <script src="script.js"></script>
+        <!--Incorporando códigos Javascript diretamente na página-->
+        <script type="text/Javascript">
+            //Com duas barras criamos um comentario de linha em Javascript
+            //Comentarios de mais de uma linha podem ser feitos dentro de /**/
+            var variavel; //Declarando uma variavel cujo nome eh 'variavel'
+            
+            variavel = 3 + 3; //Atribuindo valores e aplicando uma operacao matematica em uma variavel
+            
+            /*Utilizando a funcao nativa 'alert' para exibir uma caixa de dialogo na tela cujo conteudo sera o valor da variavel 'variavel'*/
+
+            alert(variavel);
+
+            var resultadoMultiplicacao = multiplique(10, 50); //Chamando a funcao 'multiplique' passando dois valores - 10 e 50
+            
+            //Manipulando a arvore DOM a fim de exibir, dentro da DIV declarada no HTML, o resultado da multiplicacao juntamente com o seu texto inicial 
+
+            var divLocal = document.getElementById('exibe_resultado');
+            /*
+            Neste ponto, a variavel divLocal eh um objeto que representa a div declarada no HTML. Sendo um objeto eh possivel acessar seus atributos, como innerHTML, precedido do nome do objeto seguido de um '.'
+            */
+            divLocal.innerHTML += resultadoMultiplicacao;
+
+            //Definicao da funcao 'multiplique' que recebe dois parametros - numero1 e numero2
+            function multiplique(numero1, numero2) {
+                /*
+                Declarando uma nova variavel que guardara o resultado da operacao de multiplicacao;
+                Iniciando a variavel com o valor de 0.
+                */
+            var resultado = 0;
+                //Atribuindo a variavel 'resultado' o valor resultante da multiplicacao dos 2 parametros recebeidos
+            resultado = numero1 * numero2;
+                //Retornando (devolvendo) o valor da variavel resultado
+            return resultado;
+        }
+        </script>
     </head>
     <body>
         <div id="exibe_resultado">Resultado da Multiplicação: </div>
     </body>
-    <!--Incorporando códigos Javascript diretamente na página-->
-    <script type="text/Javascript">
-        //Com duas barras criamos um comentario de linha em Javascript
-        //Comentarios de mais de uma linha podem ser feitos dentro de /**/
-        var variavel; //Declarando uma variavel cujo nome eh 'variavel'
-        
-        variavel = 3 + 3; //Atribuindo valores e aplicando uma operacao matematica em uma variavel
-        
-        /*Utilizando a funcao nativa 'alert' para exibir uma caixa de dialogo na tela cujo conteudo sera o valor da variavel 'variavel'*/
-
-        alert(variavel);
-
-        var resultadoMultiplicacao = multiplique(10, 50); //Chamando a funcao 'multiplique' passando dois valores - 10 e 50
-        
-        //Manipulando a arvore DOM a fim de exibir, dentro da DIV declarada no HTML, o resultado da multiplicacao juntamente com o seu texto inicial 
-
-        var divLocal = document.getElementById('exibe_resultado');
-        /*
-        Neste ponto, a variavel divLocal eh um objeto que representa a div declarada no HTML. Sendo um objeto eh possivel acessar seus atributos, como innerHTML, precedido do nome do objeto seguido de um '.'
-        */
-        divLocal.innerHTML += resultadoMultiplicacao;
-
-        //Definicao da funcao 'multiplique' que recebe dois parametros - numero1 e numero2
-        function multiplique(numero1, numero2) {
-            /*
-            Declarando uma nova variavel que guardara o resultado da operacao de multiplicacao;
-            Iniciando a variavel com o valor de 0.
-            */
-           var resultado = 0;
-            //Atribuindo a variavel 'resultado' o valor resultante da multiplicacao dos 2 parametros recebeidos
-           resultado = numero1 * numero2;
-            //Retornando (devolvendo) o valor da variavel resultado
-           return resultado;
-        }
-    </script>
 </html>

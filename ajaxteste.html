@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+    <head>
+        <meta charset="utf-8">
+        <title>Implementando Requisições Assíncronas (AJAX)</title>
+    </head>
+    <body>
+        <h1>
+            Clique Para Carregar Imagens Aleatórias
+        </h1>
+        <img id="img_dog" src="" alt="Aguardando a Imagem ser Carregada"/>
+        <br/>
+        <button onclick="imagensCarregadas()">Clique Para Carregar Imagens Aleatórias</button>
+    </body>
+    <script type="text/javascript">
+        function imagensCarregadas(){
+            
+            var url = "https://dog.ceo/api/breeds/image/random";
+            fetch(url, {
+                method: 'get'
+            })
+            .then(function(response) {
+                response.json().then(function(data){
+                    console.log('Resultado da Requisicao: ' + data.message); 
+                    
+                    var imgDog = document.getElementById("imd_dog");
+                    imgDog.src = data.message;
+            });
+        })
+        .catch(function(err){
+            console.error('O seguinte erro ocorreu durante a requisicao: ' + err);
+        });    
+    }
+    </script>
+</html>
